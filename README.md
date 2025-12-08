@@ -152,10 +152,11 @@ transformer_tokenid_checkpoint.pth
 
 logs/transformer_tokenid_train.csv
 
-4.4. Evaluate and compare models
+ 4.4. Evaluate and compare models  
 Token-level WER and comparison figures (GRU vs Transformer)
 
- python compare_gru_vs_transformer_figures.py \
+bash
+python compare_gru_vs_transformer_figures.py \
   --pairs day_pairs_tokenids_bos_small.pkl \
   --token_map tokenid_map.json \
   --gru_checkpoint gru_tokenid_checkpoint.pth \
@@ -174,11 +175,11 @@ gru_vs_transformer_delta_hist.png
 (histogram of WER(GRU) − WER(Transformer), positive = Transformer better)
 
 Training loss curves (GRU vs Transformer)
-```python plot_gru_vs_transformer_loss.py \
-  --gru_csv logs/gru_tokenid_train.csv \
-  --trf_csv logs/transformer_tokenid_train.csv \
-  --out training_loss_gru_vs_trf.png```
 
+python plot_gru_vs_transformer_loss.py \
+--gru_csv logs/gru_tokenid_train.csv \
+--trf_csv logs/transformer_tokenid_train.csv \
+--out training_loss_gru_vs_trf.png
 
 This script plots GRU and Transformer training loss per epoch on the same figure.
 
